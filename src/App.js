@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import Classbaseclock from './Classbaseclock'
+import './App.css';
+import Classbaseclock from './Classbaseclock';
 
-export default function App() {
-   
-    return (
+const App = () => {
 
-      <div>
-        <Classbaseclock />
-      </div>
-      
-    )
-  }
+  return (
+    <div className='App'>
+      <Classbaseclock />
+    </div>
+  )
+}
+
+export default App;

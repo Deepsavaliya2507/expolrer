@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
 
 export default class Classbaseclock extends Component {
-  
+  constructor() {
+    super();
+    this.state = {
+      time: new Date().toLocaleTimeString()
+    }
+  }
+
   componentDidMount() {
-    this.intervalID = setInterval(() =>
+    this.interval = setInterval(() =>
       this.updateClock(),
       1000
     );
   }
 
   componentWillUnmount() {
-    clearInterval(this.intervalID)
+    clearInterval(this.interval)
   }
 
   updateClock() {
@@ -20,16 +26,13 @@ export default class Classbaseclock extends Component {
   }
 
   render() {
-    const time = new Date().toLocaleTimeString();
     return (
       <div>
-        <div>
-          <center>
-            <h1>
-              {time}
-            </h1>
-          </center>
-        </div>
+        <center>
+          <h1>
+            {this.state.time}
+          </h1>
+        </center>
       </div>
     )
   }
